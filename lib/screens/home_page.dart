@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clubhouse_ui/model/room.dart';
 import 'package:flutter_clubhouse_ui/model/user.dart';
+import 'package:flutter_clubhouse_ui/screens/screens.dart';
 import 'package:flutter_clubhouse_ui/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,7 +41,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {},
           ),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 10.0, 20.0, 10.0),
               child: UserProfileImage(
@@ -50,8 +52,11 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: Text("Flutter "),
+      body: ListView(
+        padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 120.0),
+        children: [
+          UpcomingRooms(upcomingRooms: upcomingRoomsList),
+        ],
       ),
     );
   }
